@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="Assets--/bigfavicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/camera.css" />
+  <style>
+    /* hide the actual file input */
+    #uploadPhotoInput {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img src="Assets--/logo.png" alt="Logo">
+  </div>
+
+  <div class="photobooth-container" id="booth">
+    <div class="bubble-container"></div>
+    <canvas id="finalCanvas" width="1176" height="1470"></canvas>
+
+    <!-- hidden file input -->
+    <input type="file" id="uploadPhotoInput" accept="image/*" multiple />
+
+    <img class="frame-overlay" id="frameOverlay" src="Assets--/frame.png" alt="frame overlay" />
+  </div>
+
+  <div class="frame-picker" id="frameChooser"></div>
+
+  <div class="controls">
+    <button id="uploadPhoto">Upload</button>
+    <button id="readyButton" disabled style="display:none;">Decorate</button>
+    <button id="downloadBtn" style="display:none;">Download</button>
+  </div>
+  <div id="stageInfo" style="margin-top: 12px; text-align:center; font-size: 1rem; color:#333;">Upload 3 images to fill the photobooth strip.</div>
+
+  <div class="decorate-panel" id="decoratePanel" style="display:none; margin-top:16px; text-align:center;">
+    <div style="margin-bottom:12px; font-weight:700;">Choose a sticker, then click the strip to place it.</div>
+    <div id="stickerPalette" class="sticker-palette"></div>
+    <button id="clearStickers" style="margin-top:12px; display:none;">Clear Decorations</button>
+  </div>
+  <script src="javascripts/upload.js"></script>
+  <script src="javascripts/bubbles.js"></script>
+</body>
+</html>

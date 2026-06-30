@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camera Photobooth</title>
+  <link rel="icon" href="Assets--/bigfavicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/camera.css" />
+</head>
+<body>
+  <div class="logo">
+    <img src="Assets--/logo.png" alt="Logo">
+  </div>
+  <div class="photobooth-container" id="booth">
+    <div class="bubble-container"></div>
+    <div class="countdown-timer" id="countdownTimer" style="display:none;">3</div>
+    <canvas id="finalCanvas" width="1176" height="1470"></canvas>
+    <video id="liveVideo" autoplay playsinline muted></video>
+    <img class="frame-overlay" id="frameOverlay" src="Assets--/frame.png" alt="frame overlay" />
+  </div>
+
+  <div class="frame-picker" id="frameChooser"></div>
+
+  <div class="controls">
+    <button id="takePhoto" disabled>Capture</button>
+    <button id="readyButton" disabled style="display:none;">Decorate</button>
+    <button id="downloadBtn" style="display:none;">Download</button>
+  </div>
+  <div id="stageInfo" style="margin-top: 12px; text-align:center; font-size:1rem; color:#333;">Camera loading...</div>
+
+  <div class="decorate-panel" id="decoratePanel" style="display:none; margin-top:16px; text-align:center;">
+    <div style="margin-bottom:12px; font-weight:700;">Choose a sticker, then click the strip to place it.</div>
+    <div id="stickerPalette" class="sticker-palette"></div>
+    <button id="clearStickers" style="margin-top:12px; display:none;">Clear Decorations</button>
+  </div>
+
+  <script src="javascripts/camera.js"></script>
+  <script src="javascripts/bubbles.js"></script>
+</body>
+</html>
